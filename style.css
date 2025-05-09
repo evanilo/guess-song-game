@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #121212;
+  color: white;
+  padding: 2rem;
+}
+
+input, button {
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #1db954;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#choices button {
+  display: block;
+  margin: 0.5rem auto;
+  width: 50%;
+}
