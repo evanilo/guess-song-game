@@ -1,19 +1,3 @@
-async function getToken() {
-  const clientId = 'YOUR_CLIENT_ID';
-  const clientSecret = 'YOUR_CLIENT_SECRET';
-
-  const result = await fetch('https://accounts.spotify.com/api/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
-    },
-    body: 'grant_type=client_credentials'
-  });
-
-  const data = await result.json();
-  return data.access_token;
-}
 
 function extractPlaylistId(url) {
   const match = url.match(/playlist\/([a-zA-Z0-9]+)/);
@@ -25,10 +9,13 @@ async function startGame() {
   const playlistId = extractPlaylistId(url);
   if (!playlistId) return alert('Invalid playlist URL.');
 
-  const token = await getToken();
-  const res = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=50`, {
-    headers: { Authorization: 'Bearer ' + token }
-  });
+
+ async function getToken() {
+  const res = await fetch('https://bcc66d9c-8741-4fa2-8b14-2d697d4b4ff8-00-3q179tat5johm.janeway.replit.dev/'); 
+  const data = await res.json();
+  return data.access_token;
+}
+
   const data = await res.json();
   const tracks = data.items.filter(item => item.track.preview_url);
 
