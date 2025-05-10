@@ -1,4 +1,3 @@
-window.onSpotifyWebPlaybackSDKReady = () => {};
 let playlistData = null;
 let player = null;
 let deviceId = null;
@@ -175,3 +174,10 @@ function checkAnswer(choice, correctAnswer) {
     alert('Incorrect, try again!');
   }
 }
+
+(function loadSpotifySDK() {
+  const script = document.createElement('script');
+  script.src = 'https://sdk.scdn.co/spotify-player.js';
+  script.async = true;
+  document.body.appendChild(script);
+})();
