@@ -14,7 +14,7 @@ function extractPlaylistId(url) {
 
 const cors = require('cors');
 app.use(cors({
-  origin: 'https://yourusername.github.io' // Replace with your GitHub Pages URL
+  origin: 'https://evanilo.github.io' // Replace with your GitHub Pages URL
 }));
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
