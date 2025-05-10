@@ -131,8 +131,7 @@ async function startGame() {
     songInfoDiv.appendChild(img);
   }
 
-  // Add choices (improve this logic for real game)
-  // For demo: 1 correct + 3 random
+  // Add choices (1 correct + 3 random)
   const allTracks = itemsWithUri.map(item => item.track.name);
   const choicesSet = new Set([trackObj.name]);
   while (choicesSet.size < 4 && allTracks.length > 1) {
