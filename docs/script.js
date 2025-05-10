@@ -6,7 +6,8 @@ let userAccessToken = null;
 const BACKEND_URL = 'https://guess-song-game.onrender.com';
 
 const clientId = '541189a56c27485e8b5178568f346eba';
-const redirectUri = 'https://evizj.github.io/guess-song-game/';
+const redirectUri = 'https://evanilo.github.io/guess-song-game/';
+
 const scopes = [
   'streaming',
   'user-read-email',
