@@ -3,12 +3,9 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-app.use(express.static('public'));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
-});
+
 
 function extractPlaylistId(url) {
   const match = url.match(/playlist\/([a-zA-Z0-9]+)/);
