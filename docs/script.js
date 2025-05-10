@@ -5,16 +5,22 @@ const BACKEND_URL = 'https://guess-song-game.onrender.com';
 
 document.getElementById('choose-playlist-btn').addEventListener('click', async () => {
   const playlistUrl = document.getElementById('playlist-url').value;
+  console.log('Choose button clicked. Playlist URL:', playlistUrl);
+
   const response = await fetch(`${BACKEND_URL}/api/spotify-playlist`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ playlistUrl }),
   });
+
+  console.log('Fetch response:', response);
+
   if (!response.ok) {
     alert('Failed to fetch playlist. Check the URL and your backend token.');
     return;
   }
   playlistData = await response.json();
+  console.log('Playlist data:', playlistData);
 
   // Show cover image
   const coverDiv = document.getElementById('playlist-cover');
