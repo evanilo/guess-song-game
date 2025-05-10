@@ -1,3 +1,4 @@
+window.onSpotifyWebPlaybackSDKReady = () => {};
 let playlistData = null;
 let player = null;
 let deviceId = null;
